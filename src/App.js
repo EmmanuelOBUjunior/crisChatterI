@@ -7,8 +7,8 @@ const App = () =>{
         <ChatEngine
             height = '100vh'
             projectID = 'df655979-aafb-41dc-80bf-2a10f93367ff'
-            userName = ''
-            userSecret = ''
+            userName = 'crischat'
+            userSecret = 'umntwana1.'
         />
     )
 }
