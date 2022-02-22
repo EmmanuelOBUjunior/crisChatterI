@@ -19,8 +19,8 @@ const ChatFeed = (props) =>{
                   <div className="message-block">
                     {
                         isMyMessage ?
-                        <MyMessage/>
-                        : <TheirMessage/>
+                        <MyMessage message = {message}/>
+                        : <TheirMessage message = {message} lastMessage = {message[lastMessageKey]}/>
                     }  
                     </div>
                     <div className="read-receipts" style={{marginRight: isMyMessage ? '16px' : 0, marginLeft: isMyMessage ? 0 : '68px'}}>
@@ -31,7 +31,6 @@ const ChatFeed = (props) =>{
         })
     }
 
-    renderMessages()
 
     return(
         <div>
@@ -42,6 +41,11 @@ const ChatFeed = (props) =>{
                        {chat.people.map((person) => `${person.person.username}`)}
                    </div>
                </div>
+           </div>
+           {renderMessages()}
+           <div style={{height: '100px'}}/>
+           <div className="message-form-container">
+               <MessageForm {...props} chatID = {activeChat}/>
            </div>
         </div>
     )
